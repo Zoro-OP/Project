@@ -1,5 +1,5 @@
 	<head>
-		<title>Applied Candidates Info</title>
+	<title>Applied Candidates Info</title>
   <link rel="stylesheet" href="../css/registration.css"></head>
 	<body>
 
