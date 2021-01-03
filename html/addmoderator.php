@@ -1,22 +1,25 @@
-<?php include_once "../php/dmin_registration.php" ;?>
+<?php require_once "../php/admin_registration.php" ;
+    
+      $moderator = getAllmoderators();
+	 
+	  
+
+?>
 <html>
-  <head>
-    <title>Admin Registration</title>
+	<head>
+		<title>Add Moderatoe</title>
   <link rel="stylesheet" href="../css/registration.css"></head>
-  <body>
-
-    <fieldset id="register_form" align= "center">
-      <h1>Admin Registration</h1>
-
-      <form action="" method="post"  >
-        <table>
+	
+			<form action="" method="post"  >
+				<table>
           <tr>
           <td style="text-align: left;"> Full Name: </td>
           <td style="text-align: left;"><input type="text" name="fullname" value=<?php echo $fullname; ?>><span><?php echo $error_fullname; ?></span></td>
           </tr>
           <tr>
           <td style="text-align: left;"> Username:</td>
-          <td style="text-align: left;"><input type="text" name="username" value=<?php echo $username; ?>><span><?php echo $error_username; ?></span></td>
+          <td style="text-align: left;"><input type="text" name="username" onfocusout="checkUser(this)" value=<?php echo $username; ?>><span><?php echo $error_username; ?></span></td>
+		  <span><p id ="err_username"></p></span>
           </tr>
           <tr>
           <td style="text-align: left;"> Password:</td>
@@ -44,7 +47,7 @@
           <tr>
           <td style="text-align: left;">Contact No:</td>
           <td style="text-align: left;">
-          <input type="text" name="phone"   value=<?php echo $phone; ?>> <span><?php echo $error_phone_no; ?></span>
+          <input type="text" name="phone_no"   value=<?php echo $phone ; ?>> <span><?php echo $error_phone_no; ?></span>
 
           </td>
           </tr>
@@ -60,28 +63,43 @@
                                 "Dhaka",
                                 "Chittagong",
                                 "Khulna",
-                                "Rajshahi",
-                                "Barisal",
-                                "Sylhet",
-                                "Mymensingh",
-                                "Rangpur",
                                
                             );
-                            for ($m = 0;$m < 8;$m++)
+                            for ($m = 0;$m < 3;$m++)
                             {
                                 echo "<option>  $city[$m] </option>";
                             }
                             ?>
             </select> <span><?php echo $error_city; ?></span>
           </td>
+
         </tr>
-        <tr>
+
+      
+          <tr>
           <td colspan="2" align="center">
-          <input type="submit" name="register" value="Register">
+          <input type="submit" name="addcustomer" value="Add">
           </td>
           </tr>
-        </table>
-      </form>
-    </fieldset>
-  </body>
+				</table>
+			</form>
+		</fieldset>
+	</body>
 </html>
+<script>
+
+function checkUser(username){
+	
+	var xhr =new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		if(this.readyState == 4 && this.status == 200)
+		{
+			document.getElementById("err_username").innerHTML=this.responseText;
+		}
+	};
+	xhr.open("GET","checkUsername.php?u="+username.value,true);
+	xhr.send();
+}
+
+
+</script>

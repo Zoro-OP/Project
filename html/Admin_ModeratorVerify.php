@@ -1,4 +1,4 @@
-<?php include "../php/admin_reg_valid.php" ;?>
+<?php include "../php/Admin_registration.php" ;?>
 <html>
   <head>
     <title>Moderator Verify</title>
