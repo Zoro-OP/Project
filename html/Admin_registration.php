@@ -1,4 +1,4 @@
-<?php include_once "../php/dmin_registration.php" ;?>
+<?php include_once "../php/admin_registration.php" ;?>
 <html>
   <head>
     <title>Admin Registration</title>

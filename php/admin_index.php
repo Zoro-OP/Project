@@ -20,12 +20,14 @@
 
 	if($flag){
 	#		var_dump($_SESSION);
-	if(($_SESSION["type"]=="users"  )){
+	if(($_SESSION["type"]=="customer"  )){
 	header("Location: ../html/Home Page.php");}
-	if(($_SESSION["type"]=="moderator"  )){
-	header("Location: ../html/ModeratorPanel.php");}
+	if(($_SESSION["type"]=="Employee"  )){
+	header("Location: ../html/EmployeePanel.php");}
+	if(($_SESSION["type"]=="deliveryboy"  )){
+	header("Location: ../html/DeliveryboyPanel.php");}
 	if(($_SESSION["type"]=="Admin"  )){
-	header("Location: ../html/Admin_panel.php");}
+	header("Location: ../html/AdminPanel.php");}
 
 	}else{
 		if( (isset($_POST['password']) )&&(isset($_POST['username']))){

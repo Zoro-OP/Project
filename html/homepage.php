@@ -15,12 +15,12 @@
 <table>
 		<tr>
 		<td  align="left">Searching for Job</td>
-		<td><a href="user_registration.php" class="btn btn-outline-info">Sign Up!</a></td>
+		<td><a href="../views/register.php" class="btn btn-outline-info">Sign Up!</a></td>
 
 
 		</tr>
 		<tr>
-		<td> Already have an account ? </td> <td> <a href="login.php" class="btn btn-outline-info">  Login </a></td></tr><br>
+		<td> Already have an account ? </td> <td> <a href="../views/login.php" class="btn btn-outline-info">  Login </a></td></tr><br>
 		</tr>
 		</table>
 		</fieldset>
